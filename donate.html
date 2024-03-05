@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('Images/banner5.jpg');
+    background-size: cover;
+
+        }
+
+        .container {
+            background-color:transparent;
+            width: 630px;
+            height: 6%;
+            margin: 50px auto;
+            border: 2px solid white;
+            border-radius: 13px;        
+             text-shadow: 2px 2px 4px #24262b; 
+            box-shadow: 2px 3px 15px #08090a;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin: 20px 10px;
+            color: aliceblue;
+
+        }
+
+        .formdesign {
+            font-size: 20px;
+            padding: 40px auto;
+color: white;
+            margin: 10px 110px;
+        }
+
+        .formdesign input {
+            background-color: transparent;
+            width: 50%;
+            padding: 12px 20;
+            border: 1px solid white;
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        #name {
+            width: 85%;
+        }
+
+        #lname {
+            width: 85%;
+        }
+
+        #email {
+            width: 75%;
+
+        }
+
+        #phone {
+            width: 97%;
+        }
+
+        #cpass input {
+            width: 50%;
+
+        }
+
+        #pass input {
+            width: 67%;
+
+        }
+       
+        #comments input{
+           margin-top: 0px;
+            padding: 30px 80px;
+        }
+
+#credit input{
+    width: 63%;
+}
+#amount input{
+    width: 51%;
+}
+
+        .formerror {
+            color: red;
+        }
+
+        .btn {
+            margin-left: 240px;
+            padding: 10px;
+            width: 150px;
+            border: 2px solid black;
+            text-align: center;
+            margin-top: 5px;
+            background-image: linear-gradient(180deg, rgb(82, 126, 247), rgb(0, 255, 234));
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>WELLCOME TO OUR ONLINE DONATION PAGE!</h1>
+        <hr>
+        <form action="/myaction.php" name="myForm" Onsubmit="return validateForm()" method="post">
+            <!-- one -->
+            <div class="formdesign" id="name">
+                First Name:<input type="text" name="fname">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- two -->
+            <div class="formdesign" id="lname">
+                Last Name:<input type="text" name="lname">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- three -->
+            <div class="formdesign" id="phone">
+                Phone:<input type="phone" name="fphone">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- four -->
+            <div class="formdesign" id="email">
+                Email Address:<input type="email" name="femail">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- five -->
+            <div class="formdesign" id="fpass">
+                Password:<input type="password" name="fpass">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- six -->
+            <div class="formdesign" id="cpass">
+                Confirm password:<input type="password" name="cpass">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- seven -->
+            <div class="formdesign" id="amount">
+                Donation Amount:<input type="password" name="famount">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- seven -->
+            <div class="formdesign" id="credit">
+                Credit Card:<input type="password" name="fcredit">
+                <b><div class="formerror"></div></b>
+            </div>
+            <!-- seven -->
+             <div class="formdesign" id="comments"> 
+                Comments:<input type="text" name="comment">
+                <b><div class="formerror"></div></b>
+               </div>
+            <!-- </div> -->
+
+                                                   <!-- btn -->
+
+            <input class="btn" type="submit" value="Submit">
+        </form>
+    </div>
+    <Script>
+        function clearErrors(){
+            errors = document.getElementByClassName('formerror')
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+        }
+        //  if the required information is true then to remove the given error correction is hidden by this function
+        function seterror(id, error) {
+            // set error inside tag of id
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+        }
+        function validateForm(){
+            let returnval = true;
+            // perform validation if validation is false ,set the value validation false
+
+                                                     // (one)
+
+            let name = document.forms['myForm']["fname"].value;
+            if(name.length < 4){
+                seterror("name", "*Length of name is too short!")
+                returnval = false;
+            }
+            if(name == 0){
+                seterror("name", "*Name should be mention!")
+                returnval = false;
+            }
+                                                            // (one 2)
+
+            let lname = document.forms['myForm']["lname"].value;
+
+            if(lname == 0){
+                seterror("lname", "*Last Name should be mention!")
+                returnval = false;
+            }
+
+                                                                    //  (two)
+            let email = document.forms['myForm']["femail"].value;
+            if(email.length > 20){
+                seterror("email", "*Length of Email is too long!")
+                returnval = false;
+            }
+            if (email == 0) {
+                seterror("email", "*Email should be  mention! ")
+                returnval = false;
+            }
+                                                                     //  (three)
+             let phone = document.forms['myForm']["fphone"].value;
+            if(phone.length < 11){
+                seterror("phone", "*Phone no should contains 11 digits!")
+                returnval = false;
+            }
+            if(phone == 0){
+                seterror("phone", "*Phone no should be  mention! ")
+                returnval = false;
+            }
+                                                                      // (four)
+            let pass = document.forms['myForm']["pass"].value;
+            if(pass.length < 8){
+                seterror("pass", "*Password should contains 8 digits!")
+                returnval = false;
+            }
+            if(pass == 0){
+                seterror("pass", "*Password should be mention!")
+                returnval = false;
+            }
+                                                                    //  (five)
+            let cpass = document.forms['myForm']["cpass"].value;
+            if(cpass!= pass){
+                seterror("cpass", "*Confirm Password should match!")
+                returnval = false;
+            }
+                
+                                                     // (seventh)
+
+            let fcredit = document.forms['myForm']["credit"].value;
+            if(credit.length < 16){
+                seterror("credit","*Credit card no is too long!")
+                returnval = false;
+            }
+
+            return returnval;
+            // if we write return false then it doesn't submit the form but if we write return true then it submit the the form 
+        }
+    </Script>
+
+</body>
+
+</html>

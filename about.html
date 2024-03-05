@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <section class="sub-header" >
+        <!-- NAVBAR -->
+
+        <nav>
+            <!-- LOGO -->
+
+            <a href="about.html"><img src="Images/party logo.png" alt=""></a>
+            <!-- NAV-LINKS -->
+
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+
+                <!-- LINKS -->
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#about us">ABOUT US</a></li>
+                    <li><a href="">OFFICE</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    <li><a href="votenow.html">VOTE NOW</a></li>
+                </ul>
+                <!-- LINKS ENDS-->
+            </div>
+            <!-- NAV-LINKS -->
+
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- NAVBAR ENDS -->
+<h1>ABOUT US</h1>
+    </section>
+                                    <!--  about us content -->  
+       <section class="about-us">
+<div class="row">
+    <div class="about-col">
+<h1>We are active party all over the Pakistan</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse modi cum autem omnis corporis beatae id vero neque! Consequuntur modi ad quibusdam officiis facere iusto est in odit molestias nesciunt, inventore, dolores nisi culpa dignissimos necessitatibus! Vel ex velit hic soluta voluptate doloremque, ut fuga.</p>
+<a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+    </div>
+    <div class="about-col">
+<img src="Images/about2.jpg" alt="">
+    </div>
+</div>
+       </section>                             
+
+    <!-- HEADER ENDS-->
+
+    <!-- footer -->
+    <section class="footer" id="about us">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nobis quod rerum sit quos ducimus Lorem ipsum
+            dolor sit amet <br>consectetur adipisicing elit. Minus, consequuntur!</p>
+        <div class="icons">
+            <i class="fa fa-star" aria-hidden="true"></i>
+           <a href="https://www.facebook.com/JIPOfficial1"><i class="fa fa-facebook"></i></a>
+           <a href="https://twitter.com/jipofficial"><i class="fa fa-twitter"></i></a>
+           <a href="https://www.linkedin.com/company/karachijamaat/"><i class="fa fa-linkedin"></i></a>
+           <a href="https://www.instagram.com/jipofficial"><i class="fa fa-instagram"></i></a>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Sami and co.</p>
+    </section>
+     <!-- SCRIPT FOR TOGGLE MENU -->
+     <script>
+        var navlinks = document.getElementById("navlinks");
+        function showMenu() {
+            navlinks.style.right = "0";
+        }
+        function hideMenu() {
+            navlinks.style.right = "-200px";
+        }
+
+    </script>
+    <!-- SCRIPT ENDS -->
+</body>
+
+</html>
